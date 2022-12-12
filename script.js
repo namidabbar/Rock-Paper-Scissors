@@ -1,6 +1,6 @@
 console.log('Hello! World!');
 
-/* computer choses rock paper or scissors*/
+// computer choses rock paper or scissors
 
 var options=['rock', 'paper', 'scissors'] 
 
@@ -18,9 +18,9 @@ let playerSelection= prompt('Please select rock, paper or scissors:').toLowerCas
    //to make it non-case-sensitive
 
     console.log(playerSelection);
-    
-   //unction to play a round 
-function playRound(playerSelection, computerSelection){
+
+   //function to play first round 
+function playRound(){
 
     if (playerSelection == computerSelection){
 
@@ -29,10 +29,21 @@ function playRound(playerSelection, computerSelection){
    else if (playerSelection === 'rock' && computerSelection === 'paper'){
         alert('You lose! ' +computerSelection +" beats " +playerSelection +"!");
     }
+    else if (playerSelection === 'rock' && computerSelection === 'scissors'){
+        alert('You won! ' +playerSelection +" beats " +computerSelection +"!");
+    }
+    else if (playerSelection === 'paper' && computerSelection === 'scissors'){
+        alert('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+    }
     else if (playerSelection === 'paper' && computerSelection === 'rock'){
         alert('You won! ' +playerSelection +" beats " +computerSelection +"!");
     }
-    
+    else if (playerSelection === 'scissors' && computerSelection === 'rock'){
+        alert('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+    }
+    else if (playerSelection === 'scissors' && computerSelection === 'paper'){
+        alert('You won! ' +playerSelection +" beats " +computerSelection +"!");
+    }
 
 
 }
