@@ -14,7 +14,7 @@ function playRound(){
       }
       
       let computerSelection = getComputerChoice();
-      console.log(computerSelection); //print computer's selection
+     // console.log(computerSelection); //this printed computer's selection but could be used to cheat hence commented out.
       
       //player needs to select his choice
       
@@ -50,7 +50,7 @@ function playRound(){
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper'){
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
-        return points.push(0);
+        return points.push(1);
     }
 
 
