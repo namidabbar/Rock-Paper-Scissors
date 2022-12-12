@@ -2,6 +2,8 @@
 
 var options=['rock', 'paper', 'scissors'] 
 
+let points=[];
+
    //function to play first round 
 function playRound(){
 
@@ -24,24 +26,31 @@ function playRound(){
     if (playerSelection == computerSelection){
 
         console.log("it's a tie")
+        return points=0;
     }
    else if (playerSelection === 'rock' && computerSelection === 'paper'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+        return points=0;
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors'){
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
+        return points=1;
     }
     else if (playerSelection === 'paper' && computerSelection === 'scissors'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+        return points=0;
     }
     else if (playerSelection === 'paper' && computerSelection === 'rock'){
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
+        return points=1;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'rock'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+        return points=0;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper'){
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
+        return points=1;
     }
 
 
@@ -50,6 +59,7 @@ function playRound(){
 function game(){
     for(let i=0; i<5; i++){
         playRound();
+        console.log(points)
         
     }
 
