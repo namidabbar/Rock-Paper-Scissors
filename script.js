@@ -55,7 +55,8 @@ function playRound(){
 
 
 }
-
+//The following game code will not be used for the UI game, only for the game on the console
+/*
 function game(){
     for(let i=0; i<5; i++){
         playRound();
@@ -68,4 +69,4 @@ if (score>=3){
 }
 else {
 console.log("Oops! The Computer won! Your score was "+score);
-}}
+}}*/
