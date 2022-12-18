@@ -3,9 +3,10 @@
 var options=['rock', 'paper', 'scissors'] 
 
 const points=[];
+let playerSelection=document.getElementById('rock').addEventListener("click", () => { playRound('rock'); });
 
    //function to play first round 
-function playRound(){
+function playRound(playerSelection){
 
 
     function getComputerChoice(){
@@ -16,9 +17,9 @@ function playRound(){
       let computerSelection = getComputerChoice();
      // console.log(computerSelection); //this printed computer's selection but could be used to cheat hence commented out.
       
-      //player needs to select his choice
+      //player needs to select his choice, we will use buttons now
       
-      let playerSelection= prompt('Please select rock, paper or scissors:').toLowerCase();
+      //let playerSelection= prompt('Please select rock, paper or scissors:').toLowerCase();
          //to make it non-case-sensitive
       
           console.log(playerSelection);
@@ -70,3 +71,4 @@ if (score>=3){
 else {
 console.log("Oops! The Computer won! Your score was "+score);
 }}*/
+const container = document.querySelector('#container');
