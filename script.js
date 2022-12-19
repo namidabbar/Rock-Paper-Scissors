@@ -24,7 +24,7 @@ function playRound(playerSelection){
       }
       
       let computerSelection = getComputerChoice();
-      console.log(computerSelection); //this printed computer's selection but could be used to cheat hence commented out.
+      //console.log(computerSelection); //this printed computer's selection but could be used to cheat hence commented out.
       
       //player needs to select his choice, but we will use buttons now
       
@@ -42,33 +42,39 @@ function playRound(playerSelection){
     }
    else if (playerSelection === 'rock' && computerSelection === 'paper'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+        pointsComputer.push(1);
     results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
-        return pointsComputer.push(1);
+        return;
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors'){
+        pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
         results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
-        return pointsPlayer.push(1);
+        return;
     }
     else if (playerSelection === 'paper' && computerSelection === 'scissors'){
+        pointsComputer.push(1);
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
         results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
-        return pointsComputer.push(1);
+        return;
     }
     else if (playerSelection === 'paper' && computerSelection === 'rock'){
+        pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
         results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
-        return pointsPlayer.push(1);
+        return;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'rock'){
+        pointsComputer.push(1);
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
         results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
-        return pointsComputer.push(1);
+        return;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper'){
+        pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
         results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
-        return pointsPlayer.push(1);
+        return;
     }
 
 
@@ -88,3 +94,13 @@ if (score>=3){
 else {
 console.log("Oops! The Computer won! Your score was "+score);
 }}*/
+
+let scorePC= 0;
+let scorePlayer = 0;
+
+if (scorePC===5){
+    alert("Oops! The Computer won!")
+}
+else if (scorePlayer===5){
+    alert("Well done, you won!")
+}
