@@ -12,7 +12,7 @@ let playerSelection=document.getElementById('rock').addEventListener("click", ()
  playerSelection=document.getElementById('scissors').addEventListener("click", () => { playRound('scissors'); });
 
 
- const results = document.querySelector('#results');
+ const results = document.getElementById('results');
 
    //function to play first round 
 function playRound(playerSelection){
@@ -36,33 +36,38 @@ function playRound(playerSelection){
     if (playerSelection == computerSelection){
 
         console.log("it's a tie");
-        document.
+        results.textContent="It's a tie!"
         return;
 
     }
    else if (playerSelection === 'rock' && computerSelection === 'paper'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
-        
+    results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
         return pointsComputer.push(1);
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors'){
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
+        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
         return pointsPlayer.push(1);
     }
     else if (playerSelection === 'paper' && computerSelection === 'scissors'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+        results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
         return pointsComputer.push(1);
     }
     else if (playerSelection === 'paper' && computerSelection === 'rock'){
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
+        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
         return pointsPlayer.push(1);
     }
     else if (playerSelection === 'scissors' && computerSelection === 'rock'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
+        results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
         return pointsComputer.push(1);
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper'){
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
+        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
         return pointsPlayer.push(1);
     }
 
