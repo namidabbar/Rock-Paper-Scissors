@@ -33,58 +33,63 @@ function playRound(playerSelection){
       //let playerSelection= prompt('Please select rock, paper or scissors:').toLowerCase();
          //to make it non-case-sensitive
       
-          console.log(playerSelection);
+        console.log(playerSelection);
 
     if (playerSelection == computerSelection){
 
         console.log("it's a tie");
-        results.textContent="It's a tie!"
+        results.textContent="It's a tie, try again!"
         return;
 
     }
    else if (playerSelection === 'rock' && computerSelection === 'paper'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
         pointsComputer.push(1);
-    results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +scorePC;
+    results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!";
     computerRunningScore.textContent="Computer's score: "+pointsComputer.length;
+    winner();
         return;
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors'){
         pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
-        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
+        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!";
         playerRunningScore.textContent="Players's score: "+pointsPlayer.length;
+        winner();
         return;
     }
     else if (playerSelection === 'paper' && computerSelection === 'scissors'){
         pointsComputer.push(1);
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
-        results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
+        results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!";
         computerRunningScore.textContent="Computer's score: "+pointsComputer.length;
+        winner();
         return;
     }
     else if (playerSelection === 'paper' && computerSelection === 'rock'){
         pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
-        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
+        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!";
         playerRunningScore.textContent="Players's score: "+pointsPlayer.length;
+        winner();
         return;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'rock'){
         pointsComputer.push(1);
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
-        results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
+        results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!";
         computerRunningScore.textContent="Computer's score: "+pointsComputer.length;
+        winner();
         return;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper'){
         pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
-        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
+        results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" ;
         playerRunningScore.textContent="Players's score: "+pointsPlayer.length;
+        winner();
         return;
     }
-
 
 }
 //The following game code will not be used for the UI game, only for the game on the console
@@ -103,26 +108,17 @@ else {
 console.log("Oops! The Computer won! Your score was "+score);
 }}*/
 
-let scorePC= 0;
-
-/*function runningScorePC (pointsComputer) {
-  
-    for (let i = 0; i < pointsComputer.length; i += 1) {
-      scorePC += pointsComputer[i];
+function winner(){
+    if (pointsComputer.length===5 || pointsPlayer.length===5){
+        if(pointsComputer.length===5){
+        alert("Oops! The Computer won!")
+        } 
+        else if(pointsPlayer.length===5){
+            alert("Well done, you won!")
+        }
     }
-    console.log(runningScorePC(pointsComputer));
-    return scorePC;
-  }*/
-
-  scorePC=pointsComputer.length;
-  
-  
-
-let scorePlayer = 0;
-
-if (scorePC===5){
-    alert("Oops! The Computer won!")
+    else {
+        return;
+    }
 }
-else if (scorePlayer===5){
-    alert("Well done, you won!")
-}
+
