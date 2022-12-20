@@ -13,6 +13,8 @@ let playerSelection=document.getElementById('rock').addEventListener("click", ()
 
 
  const results = document.getElementById('results');
+ const computerRunningScore=document.getElementById('computerRunningScore');
+ const playerRunningScore=document.getElementById('playerRunningScore');
 
    //function to play first round 
 function playRound(playerSelection){
@@ -43,37 +45,43 @@ function playRound(playerSelection){
    else if (playerSelection === 'rock' && computerSelection === 'paper'){
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
         pointsComputer.push(1);
-    results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
+    results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +scorePC;
+    computerRunningScore.textContent="Computer's score: "+pointsComputer.length;
         return;
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors'){
         pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
         results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
+        playerRunningScore.textContent="Players's score: "+pointsPlayer.length;
         return;
     }
     else if (playerSelection === 'paper' && computerSelection === 'scissors'){
         pointsComputer.push(1);
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
         results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
+        computerRunningScore.textContent="Computer's score: "+pointsComputer.length;
         return;
     }
     else if (playerSelection === 'paper' && computerSelection === 'rock'){
         pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
         results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
+        playerRunningScore.textContent="Players's score: "+pointsPlayer.length;
         return;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'rock'){
         pointsComputer.push(1);
         console.log('You lose! ' +computerSelection +" beats " +playerSelection +"!");
         results.textContent="You lose, " +computerSelection +" beats " +playerSelection +"!" +pointsComputer;
+        computerRunningScore.textContent="Computer's score: "+pointsComputer.length;
         return;
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper'){
         pointsPlayer.push(1);
         console.log('You won! ' +playerSelection +" beats " +computerSelection +"!");
         results.textContent= 'You won! ' +playerSelection +" beats " +computerSelection +"!" +pointsPlayer;
+        playerRunningScore.textContent="Players's score: "+pointsPlayer.length;
         return;
     }
 
@@ -96,6 +104,20 @@ console.log("Oops! The Computer won! Your score was "+score);
 }}*/
 
 let scorePC= 0;
+
+/*function runningScorePC (pointsComputer) {
+  
+    for (let i = 0; i < pointsComputer.length; i += 1) {
+      scorePC += pointsComputer[i];
+    }
+    console.log(runningScorePC(pointsComputer));
+    return scorePC;
+  }*/
+
+  scorePC=pointsComputer.length;
+  
+  
+
 let scorePlayer = 0;
 
 if (scorePC===5){
