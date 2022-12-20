@@ -15,6 +15,7 @@ let playerSelection=document.getElementById('rock').addEventListener("click", ()
  const results = document.getElementById('results');
  const computerRunningScore=document.getElementById('computerRunningScore');
  const playerRunningScore=document.getElementById('playerRunningScore');
+ const refresh =document.getElementById('refresh');
 
 //function to play a round 
 function playRound(playerSelection){
@@ -79,9 +80,27 @@ function winner(){
     if (pointsComputer.length===5 || pointsPlayer.length===5){
         if(pointsComputer.length===5){
         results.textContent="Oops! The Computer won 5 rounds!";
+        var button =document.createElement('BUTTON');
+        var text =document.createTextNode("Refresh");
+        button.appendChild(text);
+        button.addEventListener("click", function(){
+            location.reload(true)});
+        refresh.appendChild(button);
+        document.getElementById('rock').disabled=true;
+        document.getElementById('paper').disabled=true;
+        document.getElementById('scissors').disabled=true;
         } 
         else if(pointsPlayer.length===5){
         results.textContent="Well done, you won 5 rounds!";
+        var button =document.createElement('BUTTON');
+        var text =document.createTextNode("Refresh");
+        button.appendChild(text)
+        button.addEventListener("click", function(){
+        location.reload(true)});
+        refresh.appendChild(button);
+        document.getElementById('rock').disabled=true;
+        document.getElementById('paper').disabled=true;
+        document.getElementById('scissors').disabled=true;
         }
     }
     else {
