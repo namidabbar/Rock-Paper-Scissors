@@ -38,7 +38,11 @@ body{
 #results{
     display: flex;
     padding: 50px;
-    align-self: center;
+    align-self: stretch;
+    justify-content: center;
+    color: #1f6f78;
+    font-size: 25px;
+
 }
 #header{
     display: flex;
@@ -46,4 +50,11 @@ body{
     align-self: center;
     color: #1f6f78;
 }
-
+#runningScore{
+    display: flex;
+    justify-content: space-between;
+    color: #1f6f78;
+    font-size: 25px;
+    padding: 100px;
+    padding-top:20px;
+}
