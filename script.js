@@ -78,10 +78,10 @@ function playRound(playerSelection){
 function winner(){
     if (pointsComputer.length===5 || pointsPlayer.length===5){
         if(pointsComputer.length===5){
-        alert("Oops! The Computer won!")
+        results.textContent="Oops! The Computer won 5 rounds!";
         } 
         else if(pointsPlayer.length===5){
-            alert("Well done, you won!")
+        results.textContent="Well done, you won 5 rounds!";
         }
     }
     else {
